@@ -2,6 +2,7 @@ from django.db import models
 from .Project import Project
 
 class BoardColumn(models.Model):
+    id = models.AutoField(primary_key=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='columns')
     name = models.CharField(max_length=100)
     order = models.PositiveIntegerField(default=0)

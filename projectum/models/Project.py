@@ -14,7 +14,7 @@ class Project(models.Model):
         ARCHIVED = "AR", "Arquivado"
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200,default="Projeto sem título")
     slug = models.SlugField(max_length=255, unique=True, blank=True)
     description = models.TextField(blank=True)
     status = models.CharField(
